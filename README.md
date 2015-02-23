@@ -39,9 +39,9 @@ E-Mails are going to arrive to the defined e-mail address like this :
             =====================================
             manifests/params.pp
             =====================================
-                    --- a/manifests/params.pp
-                    +++ b/manifests/params.pp
-                    @@ -7,7 +7,7 @@ class elasticsearch::params {
+            --- a/manifests/params.pp
+            +++ b/manifests/params.pp
+            @@ -7,7 +7,7 @@ class elasticsearch::params {
                     $java_bin        = '/usr/bin/java'
             
                     $discovery_zen_ping_unicast_hosts = '["127.0.0.1"]'
