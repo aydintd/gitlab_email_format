@@ -1,0 +1,27 @@
+Commits:
+\
+Repository: #{project_url(@project)}
+Branch: #{@branch} 
+\
+- @commits.each do |commit|
+  Commit:  #{commit.id} 
+  Link :   #{project_commit_url(@project, commit)} 
+  Author:  #{commit.author_name}
+  \
+  #{commit.safe_message}
+  \
+Changes:
+- @diffs.each do |diff|
+  \
+  \=====================================
+  - if diff.old_path == diff.new_path
+    = diff.new_path
+  - elsif diff.new_path && diff.old_path
+    #{diff.old_path} &rarr; #{diff.new_path}
+  - else
+    = diff.new_path || diff.old_path
+  \=====================================
+  != diff.diff
+\
+- if @compare.timeout
+  Huge diff. To prevent performance issues it was hidden
